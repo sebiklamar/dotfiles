@@ -1,0 +1,67 @@
+if &t_Co > 1            " if has color
+  set background=dark
+  autocmd GUIEnter * set background=light  " ... and this one for GUI
+  syntax on             " is ja alles bunt hier! bin ich jetzt ein med-inf?
+  syn sync lines=1000
+endif
+  "hi Comment ctermfg=lightgreen guifg=gray
+
+au BufNewFile,BufRead  svn-commit.* setf svn
+
+set modeline
+set ruler
+set backspace=indent,eol,start
+set modelines=2
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
+set ignorecase          " Do case insensitive matching
+set incsearch           " Incremental search
+"set autoindent
+set listchars=tab:»·,trail:·,eol:$
+set showbreak=+
+"set ts=4
+"set sw=4
+" disable visual mouse (in Terminal)
+set mouse-=a
+
+ab cusebi <Tab><Tab><Tab>cu -- SEBi
+ab tiasebi <Tab><Tab><Tab>TIA -- SEBi
+ab SEBI <Tab><Tab><Tab>SEBi
+ab SBEI <Tab><Tab><Tab>SEBi
+ab SBEi <Tab><Tab><Tab>SEBi
+ab SEbi <Tab><Tab><Tab>SEBi
+ab JEBI <Tab><Tab><Tab>JEBi
+"ab JEBi <Tab><Tab><Tab>JEBi
+ab SK Sebastian Klamar
+ab Seb Sebastian
+ab thbrseb Thank you and best regards -- Sebastian
+ab thbrsk Thank you and best regards -- Sebastian Klamar
+ab vgsk Viele Grüße -- Sebastian Klamar
+ab vgseb Viele Grüße -- Sebastian
+ab vgsebi Viele Grüße -- SEBi
+ab dvgsk Danke und viele Grüße -- Sebastian Klamar
+ab dvgseb Danke und viele Grüße -- Sebastian
+ab dvgsebi Danke und viele Grüße -- SEBi
+ab httpiseja http://files.iseja.net
+ab httpfiles http://files.iseja.net
+ab httpsebi http://sebi.klamar.name
+ab nciht nicht
+
+map QQ gqip
+
+" http://www.linuxgazette.com
+" Set up fancy printing
+set printexpr=PrintFile(v:fname_in)
+function PrintFile(fname)
+  call system("gv " . a:fname)
+  call delete(a:fname)
+  return v:shell_error
+endfunc
+
+" ============== GUI ================
+set guifont=-misc-fixed-medium-r-normal-*-*-120-*-*-c-*-iso8859-15
+" wozu braucht man beim vi eine toolbarleiste zum Klicken???
+set guioptions-=T
+set guioptions-=m
+imap <F1> <ESC> 
+map <F1> <ESC> 

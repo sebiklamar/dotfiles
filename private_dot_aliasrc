@@ -1,0 +1,46 @@
+# vim: syntax=zsh
+
+export NS1ROLLERNET="ns1-auth.rollernet.us"
+export HOMEISEJA="home.iseja.net"
+
+# Aliases
+alias letitsnow='xsnow -snowflakes 177 -santaspeed 4'
+alias cv='convert -geometry 1600x1200!'
+alias sayuptime='saydate -uptime'
+
+# Common (w/ root)
+alias f=finger
+alias j=jobs
+#alias ll='ls $LS_OPTIONS -lh'
+#alias la='ls $LS_OPTIONS -A'
+#alias lal='ls $LS_OPTIONS -Al'
+alias dselect='dselect --expert'
+alias wom='w -h | grep -v $LOGNAME | sort'
+alias duh='du -h --max-depth=1'
+alias duk='du -k --max-depth=1'
+alias dum='du -m --max-depth=1'
+alias dus='du -sh'
+alias goX='X -dpi 100 -query tux &'
+alias wgetr='wget -r -m --convert-links --no-parent'
+alias grepi='grep -i'
+alias lastv='last -20 | grep -v $LOGNAME'
+alias lastl='lastlog | grep -v "**Never"'
+alias tailsyslog='tail -f /var/log/syslog | grep -v imap'
+alias lesssyslog='grep -v imap /var/log/syslog | less'
+alias digs='dig +short'
+alias mc='/usr/bin/mc -d'
+mkbak() { cp -a $1 $1.bak }
+mkold() { cp -a $1 $1.old }
+mvbak() { mv $1 $1.bak }
+mvold() { mv $1 $1.old }
+alias ssh-known-hosts-ignore='ssh -oUserKnownHostsFile=/dev/null'
+alias sa='ssh-add'
+
+# Some more alias to avoid making mistakes:
+#alias rm='rm -i'
+#alias cp='cp -i'
+#alias mv='mv -i'
+
+# CVS
+#alias nrsync='nice -n 20 rsync --rsh "/usr/bin/ssh" --rsync-path /usr/bin/rsync --archive --delete --exclude=local.properties --exclude=output/ --exclude=".*.swp" --exclude="*.jpx.local"'
+alias nrsync='nice rsync -rilt'
