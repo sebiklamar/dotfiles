@@ -1,0 +1,10 @@
+[user]
+	email = git@sebastian.klamar.name
+[core]
+	#excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	ci = commit
+	up = pull
+	st = status
+	stat = status
