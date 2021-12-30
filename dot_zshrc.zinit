@@ -1,0 +1,93 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+#zinit wait lucid for \
+#  blockf atpull'zinit creinstall -q .' \
+#      zsh-users/zsh-completions
+#  atload"_zsh_autosuggest_start" \
+#      zsh-users/zsh-autosuggestions \
+
+### End of Zinit's installer chunk
+
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=gray,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
+
+#zinit wait'!' lucid for \
+#    OMZL::prompt_info_functions.zsh \
+#    OMZT::gnzh
+
+# fzf fuzzy finder
+## Binary release in archive, from GitHub-releases page.
+## After automatic unpacking it provides program "fzf".
+#zinit ice from"gh-r" as"program"
+#zinit load junegunn/fzf-bin
+
+#zinit ice from"gh-r" as"program"
+#zinit load junegunn/fzf
+#zinit ice as=program pick="$ZPFX/bin/(fzf|fzf-tmux)" \
+#    atclone="cp shell/completion.zsh _fzf_completion; cp bin/fzf-tmux $ZPFX/bin" \
+#    make="PREFIX=$ZPFX install"
+#zinit load junegunn/fzf
+
+# fzf integrations
+# URL: https://git.arul.io/arul/dotfiles/src/branch/macOS/zsh/.config/zsh/plugins.zsh
+#zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
+#zinit light junegunn/fzf
+
+#zinit pack"default+keys" for fzf
+
+#zinit ice pick"shell/key-bindings.zsh"
+#zinit ice pick"shell/completion.zsh"
+#zinit ice multisrc"shell/*.zsh"
+#zinit load junegunn/fzf
+
+# fzf-tab needs to be loaded after compinit, but before plugins
+# which will wrap widgets, such as zsh-autosuggestions or fast-syntax-highlighting!!
+#zinit light Aloxaf/fzf-tab
+
+# simple setup
+zinit wait lucid for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions
+
+# needs to be loaded after syntax highlighting
+zinit ice wait lucid
+zinit load zsh-users/zsh-history-substring-search
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+
+#zinit pack for fzf
+#export FZF_COMPLETION_TRIGGER=''
+#bindkey '^T' fzf-completion
+#bindkey '^I' $fzf_default_completion
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
