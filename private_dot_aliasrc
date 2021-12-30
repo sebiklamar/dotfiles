@@ -5,7 +5,7 @@ export HOMEISEJA="home.iseja.net"
 
 # Aliases
 alias letitsnow='xsnow -snowflakes 177 -santaspeed 4'
-alias cv='convert -geometry 1600x1200!'
+alias cv='convert -geometry 1920x1080!'
 alias sayuptime='saydate -uptime'
 
 # Common (w/ root)
