@@ -46,8 +46,8 @@ fi
 if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
         source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-if [ -r ~/.iterm2_shell_integration.zsh ]; then
-        source ~/.iterm2_shell_integration.zsh
+if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then
+        source ~/.config/iterm2/iterm2_shell_integration.zsh
 fi
 
 #zstyle ':completion:*' auto-description 'specify: %d'
