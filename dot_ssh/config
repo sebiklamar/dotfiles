@@ -1,3 +1,6 @@
+Host *
+	HashKnownHosts no
+
 Host *.home.iseja.net *.dir.iseja.net
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
