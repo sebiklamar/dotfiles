@@ -1,3 +1,4 @@
 startup_message off
 escape ^vv
 hardstatus alwayslastline "%{rw}%n%f %t %{wk} | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+term screen-256color

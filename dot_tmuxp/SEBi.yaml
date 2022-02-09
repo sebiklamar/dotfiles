@@ -1,0 +1,71 @@
+session_name: SEBi
+windows:
+- window_name: log
+  window_index: 1
+  layout: 8bbd,271x72,0,0{89x72,0,0,57,89x72,90,0[89x36,90,0,59,89x35,90,37,60],91x72,180,0,61}
+#  options:
+#    automatic-rename: 'off'
+  panes:
+  - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
+  - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
+  - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
+  - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
+  #start_directory: /nfs/iseja.net/user/sebi
+- window_name: pve
+  window_index: 4
+  layout: 1a6c,271x72,0,0{89x72,0,0[89x23,0,0,7,89x23,0,24,18,89x24,0,48,19],89x72,90,0[89x23,90,0,12,89x23,90,24,17,89x24,90,48,20],91x72,180,0,16}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: while true; do ssh root@pve1.home.iseja.net; sleep 33; done
+  - while true; do ssh root@pve2.home.iseja.net; sleep 33; done
+  - while true; do ssh root@pve3.home.iseja.net; sleep 33; done
+  - while true; do ssh root@pve1.home.iseja.net; sleep 33; done
+  - while true; do ssh root@pve2.home.iseja.net; sleep 33; done
+  - while true; do ssh root@pve3.home.iseja.net; sleep 33; done
+  - while true; do ssh root@loghost.home.iseja.net; sleep 33; done
+- window_name: nas
+  window_index: 5
+  layout: 8ec2,271x72,0,0{135x72,0,0,0,135x72,136,0,60}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: while true; do TERM=xterm-256color; ssh root@natascha.home.iseja.net; sleep 33; done
+  - 
+- window_name: hosts
+  window_index: 6
+  layout: fdbd,269x71,0,0[271x23,0,0{89x23,0,0,21,89x23,90,0,28,91x23,180,0,29},271x23,0,24{89x23,0,24,22,89x23,90,24,26,91x23,180,24,27},271x24,0,48{89x24,0,48,23,89x24,90,48,24,91x24,180,48,25}]
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+  - 
+  - 
+  - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
+  - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
+  - while true; do ssh root@adelheid.dir.iseja.net; sleep 33; done
+  - while true; do ssh root@pve4.home.iseja.net; sleep 33; done
+  - 
+  - while true; do ssh root@baerbel.dir.iseja.net; sleep 33; done
+- window_name: mutt
+  window_index: 7
+  layout: 1523,271x72,0,0{89x72,0,0[89x36,0,0,0,89x35,0,37,4],89x72,90,0[89x36,90,0,1,89x35,90,37,3],91x72,180,0,2}
+  focus: 'true'
+  panes:
+  - 
+  - 
+  - 
+  - 
+  - mutt
+- window_name: hobby
+  window_index: 8
+  layout: 59ef,358x85,0,0[358x43,0,0{119x43,0,0,30,121x43,120,0,36,116x43,242,0,37},358x41,0,44{119x41,0,44,32,121x41,120,44,33,116x41,242,44,38}]
+  panes:
+  - focus: 'true'
+  - 
+  - 
+  - 
+  - 
+  - 
