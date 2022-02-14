@@ -28,7 +28,7 @@ alias lastl='lastlog | grep -v "**Never"'
 alias tailsyslog='tail -f /var/log/syslog | grep -v imap'
 alias lesssyslog='grep -v imap /var/log/syslog | less'
 alias digs='dig +short'
-alias mc='/usr/bin/mc -d'
+#alias mc='mc -d'
 mkbak() { cp -a $1 $1.bak }
 mkold() { cp -a $1 $1.old }
 mvbak() { mv $1 $1.bak }
