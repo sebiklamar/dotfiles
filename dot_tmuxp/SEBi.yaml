@@ -46,7 +46,7 @@ windows:
   - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
   - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
   - while true; do ssh root@adelheid.dir.iseja.net; sleep 33; done
-  - while true; do ssh root@pve4.home.iseja.net; sleep 33; done
+  - 
   - 
   - while true; do ssh root@baerbel.dir.iseja.net; sleep 33; done
 - window_name: mutt
