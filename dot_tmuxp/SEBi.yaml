@@ -10,7 +10,6 @@ windows:
   - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
   - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
   - while true; do ssh root@loghost.home.iseja.net; sleep 7; done
-  #start_directory: /nfs/iseja.net/user/sebi
 - window_name: pve
   window_index: 4
   layout: 1a6c,271x72,0,0{89x72,0,0[89x23,0,0,7,89x23,0,24,18,89x24,0,48,19],89x72,90,0[89x23,90,0,12,89x23,90,24,17,89x24,90,48,20],91x72,180,0,16}
@@ -43,12 +42,12 @@ windows:
   - focus: 'true'
   - 
   - 
+  - 
   - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
-  - while true; do ssh salt@salt-master.home.iseja.net; sleep 33; done
-  - while true; do ssh root@adelheid.dir.iseja.net; sleep 33; done
   - 
   - 
-  - while true; do ssh root@baerbel.dir.iseja.net; sleep 33; done
+  - 
+  - 
 - window_name: mutt
   window_index: 7
   layout: 1523,271x72,0,0{89x72,0,0[89x36,0,0,0,89x35,0,37,4],89x72,90,0[89x36,90,0,1,89x35,90,37,3],91x72,180,0,2}
