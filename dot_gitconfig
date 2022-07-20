@@ -1,5 +1,6 @@
 [user]
 	email = git@sebastian.klamar.name
+	name = Sebastian Klamar
 [core]
 	#excludesfile = ~/.gitignore
 [alias]
