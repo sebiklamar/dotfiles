@@ -38,17 +38,15 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 #compinit
 
 # Completion
+if [ -r /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then source /opt/homebrew/opt/fzf/shell/key-bindings.zsh; fi
 if [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ]; then source /usr/share/doc/fzf/examples/key-bindings.zsh; fi
 
-if [ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-        source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then
-        source ~/.config/iterm2/iterm2_shell_integration.zsh
-fi
+if [ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; fi
+
+if [ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
+if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
+
+if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; source ~/.config/iterm2/iterm2_shell_integration.zsh; fi
 
 #zstyle ':completion:*' auto-description 'specify: %d'
 #zstyle ':completion:*' completer _expand _complete _correct _approximate
