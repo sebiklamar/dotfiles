@@ -4,27 +4,3 @@ Host *
 Host *.home.iseja.net *.dir.iseja.net
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
-
-Host tabea.home.iseja.net
-	HostName tabea.home.iseja.net
-	User sebi
-
-Host salt-master.home.iseja.net
-	HostName salt-master.home.iseja.net
-	User salt
-
-Host hassos-prod.home.iseja.net
-	HostName hassos-prod.home.iseja.net
-	User root
-	Port 2280
-
-Host hassos-prod.home.iseja.net
-	HostName hassos-prod.home.iseja.net
-	User root
-	Port 2222
-
-Host test-home-assistant2.test.iseja.net
-	HostName test-home-assistant2.test.iseja.net
-	User root
-	Port 2222
-
