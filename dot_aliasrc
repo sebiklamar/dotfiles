@@ -29,11 +29,13 @@ alias lastl='lastlog | grep -v "**Never"'
 alias tailsyslog='tail -f /var/log/syslog | grep -v imap'
 alias lesssyslog='grep -v imap /var/log/syslog | less'
 alias digs='dig +short'
+alias openssl-text='openssl x509 -text -noout'
 #alias mc='mc -d'
 mkbak() { cp -a $1 $1.bak }
 mkold() { cp -a $1 $1.old }
 mvbak() { mv $1 $1.bak }
 mvold() { mv $1 $1.old }
+ssh-permanent() { while true; do ssh $*; sleep 7; refresh; done }
 alias ssh-known-hosts-ignore='ssh -oUserKnownHostsFile=/dev/null'
 alias sa='ssh-add'
 
