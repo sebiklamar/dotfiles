@@ -91,3 +91,8 @@ function preexec {
     # Refresh environment if inside tmux
     refresh
 }
+
+# PROMPT
+# powerlevel10k
+[[ ! -r ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
