@@ -67,3 +67,25 @@ if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/i
 #zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export FZF_CTRL_T_COMMAND='fdfind --type file --follow --hidden --exclude .git'
+
+# URL: https://babushk.in/posts/renew-environment-tmux.html / https://github.com/ibab/dotfiles/blob/master/zshrc
+# Refresh environment variables in tmux.
+if [ -n "$TMUX" ]; then
+    function refresh {
+        sshauth=$(tmux show-environment | grep "^SSH_AUTH_SOCK")
+        if [ $sshauth ]; then
+            export $sshauth
+        fi
+        display=$(tmux show-environment | grep "^DISPLAY")
+        if [ $display ]; then
+            export $display
+        fi
+    }
+else
+    function refresh { }
+fi
+
+function preexec {
+    # Refresh environment if inside tmux
+    refresh
+}
