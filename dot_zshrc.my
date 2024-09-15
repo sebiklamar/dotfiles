@@ -40,6 +40,7 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # Completion
 if [ -r /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then source /opt/homebrew/opt/fzf/shell/key-bindings.zsh; fi
 if [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ]; then source /usr/share/doc/fzf/examples/key-bindings.zsh; fi
+export FZF_CTRL_T_COMMAND='fdfind --type file --follow --hidden --exclude .git'
 
 if [ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; fi
 
@@ -47,6 +48,8 @@ if [ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then 
 if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
 
 if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/iterm2/iterm2_shell_integration.zsh; fi
+
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew shellenv ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 #zstyle ':completion:*' auto-description 'specify: %d'
 #zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -66,10 +69,9 @@ if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/i
 #zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export FZF_CTRL_T_COMMAND='fdfind --type file --follow --hidden --exclude .git'
-
 # URL: https://babushk.in/posts/renew-environment-tmux.html / https://github.com/ibab/dotfiles/blob/master/zshrc
 # Refresh environment variables in tmux.
+# TODO alternative: https://github.com/MikeDacre/tmux-zsh-environment
 if [ -n "$TMUX" ]; then
     function refresh {
         sshauth=$(tmux show-environment | grep "^SSH_AUTH_SOCK")
