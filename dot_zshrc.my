@@ -49,7 +49,7 @@ if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then source /u
 
 if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/iterm2/iterm2_shell_integration.zsh; fi
 
-if [ -x /home/linuxbrew/.linuxbrew/bin/brew shellenv ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 #zstyle ':completion:*' auto-description 'specify: %d'
 #zstyle ':completion:*' completer _expand _complete _correct _approximate
