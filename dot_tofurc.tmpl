@@ -1,0 +1,6 @@
+# use same dir as terragrunt
+{{ if eq .chezmoi.os "darwin" -}}
+plugin_cache_dir = "$HOME/Library/Caches/terragrunt/providers"
+{{ else -}}
+plugin_cache_dir = "$HOME/.cache/terragrunt/providers"
+{{ end -}}
