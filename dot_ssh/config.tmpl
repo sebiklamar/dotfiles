@@ -5,6 +5,10 @@ Host *.home.iseja.net *.dir.iseja.net
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
 
+Host salt-master.home.iseja.net
+	HostName salt-master.home.iseja.net
+	User localsebi
+
 {{ if eq .chezmoi.os "darwin" -}}
 # macOS contents
 Host *
