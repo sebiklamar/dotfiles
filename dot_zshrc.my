@@ -40,6 +40,11 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
+#############################################################################
+### package manager/framework configuration
+if [ -r ~/.zshrc.grml ]; then source ~/.zshrc.grml; fi
+#if [ -r ~/.zshrc.zinit ]; then source ~/.zshrc.zinit; fi
+
 ################################################################################
 ### Completion
 
@@ -54,6 +59,25 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# Make "kubecolor" borrow the same completion logic as "kubectl"
+compdef kubecolor=kubectl
+
+# # TODO workaround for missing brew completions
+# #APPS_FOR_COMPLETION=kubectl kustomize talosctl talhelper cilium
+# #for CMD in ${APPS_FOR_COMPLETION}; do
+# for CMD in kubectl kustomize talosctl talhelper cilium; do
+#   #echo "testing program $CMD"
+#   if command -v ${CMD} 2>&1 >/dev/null
+#   then
+#     source <($CMD completion zsh)
+#   fi
+# done
+
+eval "$(direnv hook zsh)"
+
+################################################################################
+### OS-installed Plugins
+
 if [ -r /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then source /opt/homebrew/opt/fzf/shell/key-bindings.zsh; fi
 if [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ]; then source /usr/share/doc/fzf/examples/key-bindings.zsh; fi
 export FZF_CTRL_T_COMMAND='fdfind --type file --follow --hidden --exclude .git'
@@ -64,6 +88,10 @@ if [ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then 
 if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
 
 if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/iterm2/iterm2_shell_integration.zsh; fi
+
+
+################################################################################
+### TMUX
 
 # URL: https://babushk.in/posts/renew-environment-tmux.html / https://github.com/ibab/dotfiles/blob/master/zshrc
 # Refresh environment variables in tmux.
@@ -87,11 +115,6 @@ function preexec {
     # Refresh environment if inside tmux
     refresh
 }
-
-#############################################################################
-# package manager/framework configuration
-if [ -r ~/.zshrc.grml ]; then source ~/.zshrc.grml; fi
-#if [ -r ~/.zshrc.zinit ]; then source ~/.zshrc.zinit; fi
 
 #############################################################################
 # PROMPT
