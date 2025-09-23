@@ -39,6 +39,12 @@ ssh-permanent() { while true; do ssh $*; sleep 7; refresh; done }
 alias ssh-known-hosts-ignore='ssh -oUserKnownHostsFile=/dev/null'
 alias sa='ssh-add'
 
+# Kubernetes
+alias cat="ccat --bg=dark -C always"
+alias kc="kubecolor --kubecolor-theme=protanopia-dark"
+alias kubectl="kubecolor --kubecolor-theme=protanopia-dark"
+alias k=kubectl
+
 # Some more alias to avoid making mistakes:
 #alias rm='rm -i'
 #alias cp='cp -i'
