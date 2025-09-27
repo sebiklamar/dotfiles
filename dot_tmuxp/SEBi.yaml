@@ -6,33 +6,33 @@ windows:
 #  options:
 #    automatic-rename: 'off'
   panes:
-  - ssh-permanent root@loghost.home.iseja.net
-  - ssh-permanent root@loghost.home.iseja.net
-  - ssh-permanent root@loghost.home.iseja.net
-  - ssh-permanent root@loghost.home.iseja.net
-  - ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
 - window_name: pve
   window_index: 4
   layout: 1a6c,271x72,0,0{89x72,0,0[89x23,0,0,7,89x23,0,24,18,89x24,0,48,19],89x72,90,0[89x23,90,0,12,89x23,90,24,17,89x24,90,48,20],91x72,180,0,16}
   options:
     automatic-rename: 'off'
   panes:
-  - focus: 'true'
-    shell_command: ssh-permanent root@pve1.home.iseja.net
-  - ssh-permanent root@pve5.home.iseja.net
-  - 
-  - ssh-permanent root@pve1.home.iseja.net
-  - ssh-permanent root@pve5.home.iseja.net
-  - 
-  - ssh-permanent root@loghost.home.iseja.net
+  - shell_command: ssh-permanent root@pve1.home.iseja.net
+  - shell_command: ssh-permanent root@pve4.home.iseja.net
+  - shell_command: ssh-permanent root@pve3.home.iseja.net
+  - shell_command: ssh-permanent root@pve1.home.iseja.net
+  - shell_command: ssh-permanent root@pve4.home.iseja.net
+  - shell_command: ssh-permanent root@pve3.home.iseja.net
+  - shell_command: ssh-permanent root@loghost.home.iseja.net
+    focus: 'true'
 - window_name: nas
   window_index: 5
   layout: 8ec2,271x72,0,0{135x72,0,0,0,135x72,136,0,60}
   options:
     automatic-rename: 'off'
   panes:
-  - focus: 'true'
-    shell_command: ssh-permanent root@fiona.home.iseja.net
+  - shell_command: ssh-permanent root@fiona.home.iseja.net
+    focus: 'true'
   - shell_command: ssh-permanent root@fiona.home.iseja.net
 - window_name: hosts
   window_index: 6
@@ -40,12 +40,12 @@ windows:
   options:
     automatic-rename: 'off'
   panes:
-  - focus: 'true'
-    shell_command: ssh-permanent root@polina.home.iseja.net
+  - shell_command: ssh-permanent root@polina.home.iseja.net
+    focus: 'true'
   - 
   - 
   - 
-  - ssh-permanent localsebi@salt-master.home.iseja.net
+  - shell_command: ssh-permanent localsebi@salt-master.home.iseja.net
   - 
   - 
   - 
@@ -62,17 +62,13 @@ windows:
   - mutt
 - window_name: hobby
   window_index: 8
-  layout: 59ef,358x85,0,0[358x43,0,0{119x43,0,0,30,121x43,120,0,36,116x43,242,0,37},358x41,0,44{119x41,0,44,32,121x41,120,44,33,116x41,242,44,38}]
+  layout: 6860,255x77,0,0,30
   panes:
-  - focus: 'true'
-  - 
-  - 
-  - 
-  - 
-  - 
+  - shell_command: ssh-permanent hannelore.home.iseja.net
+    focus: 'true'
 - window_name: project
   window_index: 9
-  layout: 59ef,358x85,0,0[358x43,0,0{119x43,0,0,30,121x43,120,0,36,116x43,242,0,37},358x41,0,44{119x41,0,44,32,121x41,120,44,33,116x41,242,44,38}]
+  layout: f565,255x77,0,0[255x38,0,0{85x38,0,0,35,61x38,86,0,36,107x38,148,0,37},255x38,0,39{85x38,0,39,38,61x38,86,39,39,107x38,148,39,40}]
   panes:
   - focus: 'true'
   - 
