@@ -59,19 +59,19 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# TODO workaround for missing brew completions
+#APPS_FOR_COMPLETION=kubectl kustomize talosctl talhelper cilium
+#for CMD in ${APPS_FOR_COMPLETION}; do
+for CMD in kubectl kustomize talosctl talhelper cilium; do
+  #echo "testing program $CMD"
+  if command -v ${CMD} 2>&1 >/dev/null
+  then
+    source <($CMD completion zsh)
+  fi
+done
+
 # Make "kubecolor" borrow the same completion logic as "kubectl"
 compdef kubecolor=kubectl
-
-# # TODO workaround for missing brew completions
-# #APPS_FOR_COMPLETION=kubectl kustomize talosctl talhelper cilium
-# #for CMD in ${APPS_FOR_COMPLETION}; do
-# for CMD in kubectl kustomize talosctl talhelper cilium; do
-#   #echo "testing program $CMD"
-#   if command -v ${CMD} 2>&1 >/dev/null
-#   then
-#     source <($CMD completion zsh)
-#   fi
-# done
 
 eval "$(direnv hook zsh)"
 
