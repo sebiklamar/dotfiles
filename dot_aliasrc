@@ -44,7 +44,7 @@ alias cat="ccat --bg=dark -C always"
 alias kc="kubecolor --kubecolor-theme=protanopia-dark"
 alias kubectl="kubecolor --kubecolor-theme=protanopia-dark"
 alias k=kubectl
-alias kgetall="kubectl get all,configmaps,jobs,secrets,sealedsecrets,jobs"
+alias kgetall="kubectl get all,configmaps,jobs,secrets,sealedsecrets,jobs,pvc"
 
 # Some more alias to avoid making mistakes:
 #alias rm='rm -i'
