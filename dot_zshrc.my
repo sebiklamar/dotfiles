@@ -1,3 +1,5 @@
+# vim:syntax=zsh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,8 +13,6 @@ fi
 umask 077
 
 if [ -r ~/.aliasrc ]; then source ~/.aliasrc; fi
-
-
 
 ### Set up the standard from zsh init ###
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -43,6 +43,7 @@ if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.lin
 #############################################################################
 ### package manager/framework configuration
 if [ -r ~/.zshrc.grml ]; then source ~/.zshrc.grml; fi
+#if [ -r ~/.zshrc.ohmyzsh ]; then source ~/.zshrc.ohmyzsh; fi
 #if [ -r ~/.zshrc.zinit ]; then source ~/.zshrc.zinit; fi
 
 ################################################################################
@@ -78,15 +79,19 @@ eval "$(direnv hook zsh)"
 ################################################################################
 ### OS-installed Plugins
 
+## fzf
 if [ -r /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then source /opt/homebrew/opt/fzf/shell/key-bindings.zsh; fi
 if [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ]; then source /usr/share/doc/fzf/examples/key-bindings.zsh; fi
 export FZF_CTRL_T_COMMAND='fdfind --type file --follow --hidden --exclude .git'
 
+## zsh-syntax-highlighting
 if [ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; fi
 
+## zsh-autosuggestions
 if [ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
 if [ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh; fi
 
+## iterm2
 if [ -r ~/.config/iterm2/iterm2_shell_integration.zsh ]; then source ~/.config/iterm2/iterm2_shell_integration.zsh; fi
 
 
