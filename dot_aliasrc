@@ -43,10 +43,12 @@ alias sa='ssh-add'
 alias cat="ccat --bg=dark -C always"
 alias kubectl="kubecolor --kubecolor-theme=protanopia-dark"
 alias kc="kubecolor --kubecolor-theme=protanopia-dark"
-alias k="kubectl"
 alias kgetall="kubectl get all,configmaps,jobs,secrets,sealedsecrets,jobs,pvc"
-alias kgp="k get pods"
-alias kgpf="kgp --field-selector=status.phase!=Running"
+
+CONFIGDIR="$HOME/.config/zsh"
+ALIAS_K8S="$CONFIGDIR/kubernetes.zsh"
+if [ -r ${ALIAS_K8S} ]; then source ${ALIAS_K8S}; fi
+
 
 # Some more alias to avoid making mistakes:
 #alias rm='rm -i'
