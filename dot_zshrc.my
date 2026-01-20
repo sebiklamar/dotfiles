@@ -12,8 +12,6 @@ fi
 # by SEBi
 umask 077
 
-if [ -r ~/.aliasrc ]; then source ~/.aliasrc; fi
-
 ### Set up the standard from zsh init ###
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -126,3 +124,8 @@ function preexec {
 # powerlevel10k
 [[ ! -r ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#############################################################################
+# ALIASES
+if [ -r ~/.aliasrc ]; then source ~/.aliasrc; fi
+
