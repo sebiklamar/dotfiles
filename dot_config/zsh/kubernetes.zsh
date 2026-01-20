@@ -1,17 +1,4 @@
-if (( ! $+commands[kubectl] )); then
-  return
-fi
-
-# If the completion file doesn't exist yet, we need to autoload it and
-# bind it to `kubectl`. Otherwise, compinit will have already done that.
-if [[ ! -f "$ZSH_CACHE_DIR/completions/_kubectl" ]]; then
-  typeset -g -A _comps
-  autoload -Uz _kubectl
-  _comps[kubectl]=_kubectl
-fi
-
-kubectl completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_kubectl" &|
-
+# inspired from https://github.com/ohmyzsh/ohmyzsh/blob/e0766905519fbc7982a590a195ee7c3e8bb594e8/plugins/kubectl/kubectl.plugin.zsh
 # This command is used a LOT both below and in daily life
 alias k=kubectl
 
@@ -64,13 +51,6 @@ alias kgswide='kgs -o wide'
 alias kes='kubectl edit svc'
 alias kds='kubectl describe svc'
 alias kdels='kubectl delete svc'
-
-# Ingress management
-alias kgi='kubectl get ingress'
-alias kgia='kubectl get ingress --all-namespaces'
-alias kei='kubectl edit ingress'
-alias kdi='kubectl describe ingress'
-alias kdeli='kubectl delete ingress'
 
 # Namespace management
 alias kgns='kubectl get namespaces'
