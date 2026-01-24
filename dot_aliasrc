@@ -38,6 +38,7 @@ mvold() { mv $1 $1.old }
 ssh-permanent() { while true; do ssh $*; sleep 7; refresh; done }
 alias ssh-known-hosts-ignore='ssh -oUserKnownHostsFile=/dev/null'
 alias sa='ssh-add'
+alias cutf1='cut -d " " -f 1'
 
 # Kubernetes
 alias cat="ccat --bg=dark -C always"
