@@ -27,8 +27,11 @@ alias kcgc='kubectl config get-contexts'
 alias kdel='kubectl delete'
 alias kdelf='kubectl delete -f'
 alias kdelk='kubectl delete -k'
+
+# Events
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
-alias kgew='kubectl get events --sort-by=".lastTimestamp" --watch'
+## show events with WARN or other un-`Normal' severity (type)
+alias kgew='kubectl get events -o custom-columns=LastSeen:.lastTimestamp,Count:.count,Reason:.reason,NS:.metadata.namespace,Message:.message --field-selector type!=Normal'
 
 # Pod management.
 alias kgp='kubectl get pods'
