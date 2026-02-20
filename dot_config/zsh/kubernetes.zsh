@@ -35,6 +35,7 @@ alias kgew='kubectl get events -o custom-columns=LastSeen:.lastTimestamp,Count:.
 
 # Pod management.
 alias kgp='kubectl get pods'
+alias kgpf='kgp --field-selector=status.phase!=Running'
 alias kgpl='kgp -l'
 alias kgpn='kgp -n'
 alias kgpsl='kubectl get pods --show-labels'
