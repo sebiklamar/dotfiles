@@ -1,3 +1,5 @@
+# chezmoi-managed file, only change via "chezmoi edit <file>"
+# vim:syntax=sshconfig
 Host *
 	HashKnownHosts no
 
@@ -8,6 +10,10 @@ Host *.home.iseja.net *.dir.iseja.net
 Host salt-master.home.iseja.net
 	HostName salt-master.home.iseja.net
 	User localsebi
+
+Host hassos-prod.home.iseja.net
+	HostName hassos-prod.home.iseja.net
+	User hassio
 
 {{ if eq .chezmoi.os "darwin" -}}
 # macOS contents
