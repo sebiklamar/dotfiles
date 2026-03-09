@@ -1,6 +1,7 @@
 # inspired from https://github.com/ohmyzsh/ohmyzsh/blob/e0766905519fbc7982a590a195ee7c3e8bb594e8/plugins/kubectl/kubectl.plugin.zsh
 # This command is used a LOT both below and in daily life
 alias k=kubectl
+alias kctx=kubectx
 
 # Execute a kubectl command against all namespaces
 alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
@@ -35,9 +36,10 @@ alias kgew='kubectl get events -o custom-columns=LastSeen:.lastTimestamp,Count:.
 
 # Pod management.
 alias kgp='kubectl get pods'
-alias kgpf='kgp --field-selector=status.phase!=Running'
+alias kgpf='kgp --field-selector=status.phase=Failed'
 alias kgpl='kgp -l'
 alias kgpn='kgp -n'
+alias kgpr='kgp --field-selector=status.phase!=Running'
 alias kgpsl='kubectl get pods --show-labels'
 alias kgpa='kubectl get pods --all-namespaces'
 alias kgpw='kgp --watch'
