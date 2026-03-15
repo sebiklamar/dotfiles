@@ -43,7 +43,7 @@ alias sa='ssh-add'
 alias cutf1='cut -d " " -f 1'
 
 # Kubernetes
-alias cat="ccat --bg=dark -C always"
+alias ccat="ccat --bg=dark -C always"
 alias kubectl="kubecolor --kubecolor-theme=protanopia-dark"
 alias kc="kubecolor --kubecolor-theme=protanopia-dark"
 ALIAS_K8S="$CONFIGDIR/kubernetes.zsh"

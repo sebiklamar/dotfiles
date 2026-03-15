@@ -192,4 +192,8 @@ function _build_kubectl_out_alias {
 _build_kubectl_out_alias "kj"  'kubectl "$@" -o json | jq'
 _build_kubectl_out_alias "kjx" 'kubectl "$@" -o json | fx'
 _build_kubectl_out_alias "ky"  'kubectl "$@" -o yaml | yh'
+_build_kubectl_out_alias "kyaml"  'kubectl "$@" -o yaml'
 unfunction _build_kubectl_out_alias
+
+# Simple alias w/o function as we use `kubecolor` for pretty output
+alias kgy='kubectl -o yaml get'
