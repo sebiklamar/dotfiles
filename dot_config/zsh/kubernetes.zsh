@@ -8,9 +8,13 @@ alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
 # Apply a YML file
 alias kaf='kubectl apply -f'
+alias kafs='kubectl apply --server-side -f'
 
 # Apply a kustomization directory
 alias kapk='kubectl apply -k'
+
+# Diff
+alias kdiff='kubectl diff -f'
 
 # Drop into an interactive terminal on a container
 alias keti='kubectl exec -t -i'
@@ -31,8 +35,10 @@ alias kdelk='kubectl delete -k'
 
 # Events
 alias kge='kubectl get events --sort-by=".lastTimestamp"'
+## show events with absolute timestamp
+alias kged='kge -o custom-columns=LastSeen:.lastTimestamp,Count:.count,NS:.metadata.namespace,Reason:.reason,Message:.message'
 ## show events with WARN or other un-`Normal' severity (type)
-alias kgew='kubectl get events -o custom-columns=LastSeen:.lastTimestamp,Count:.count,Reason:.reason,NS:.metadata.namespace,Message:.message --field-selector type!=Normal'
+alias kgew='kged --field-selector type!=Normal'
 
 # Pod management.
 alias kgp='kubectl get pods'
