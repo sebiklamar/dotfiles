@@ -1,5 +1,6 @@
 export PATH=${HOME}/.local/bin:$PATH
 export PATH=${HOME}/bin:$PATH
+export PATH=${HOME}/.bun/bin:$PATH
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
 export LANG="de_DE.UTF-8"
 export LC_MESSAGES="C"
