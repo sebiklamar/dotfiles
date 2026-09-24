@@ -1,4 +1,4 @@
 {
   "sync.enabled": "true",
-  "sync.remote-url": "git@github.com:sebiklamar/mink-sync.git"
+  "sync.remote-url": "https://github.com/sebiklamar/mink-sync.git"
 }
